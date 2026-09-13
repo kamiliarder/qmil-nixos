@@ -22,13 +22,16 @@ flake.nixosModules.qmilConfiguration = { config, pkgs, ... }:
   i18n.defaultLocale = "en_US.UTF-8";
 
   # Desktop
-  services.xserver.enable = true;
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.xfce.enable = true;
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
+  # services.xserver.xkb = {
+  #   layout = "us";
+  #   variant = "";
+  # };
+  environment.variables = {
+    XCURSOR_THEME = "Adwaita";
+    XCURSOR_SIZE = "24";
+    };
 
   services.printing.enable = true;
 
@@ -66,6 +69,7 @@ flake.nixosModules.qmilConfiguration = { config, pkgs, ... }:
     fastfetch
     discord
     spotify
+    lazygit
   ];
 
   system.stateVersion = "26.05";
