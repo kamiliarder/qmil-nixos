@@ -48,6 +48,12 @@ flake.nixosModules.qmilConfiguration = { config, pkgs, ... }:
     pulse.enable = true;
   };
 
+  services.cloudflare-warp.enable = true;
+  services.mysql = {
+  enable = true;
+  package = pkgs.mysql84;
+  };
+
   users.users."qmil" = {
     isNormalUser = true;
     description = "qmil";
@@ -62,6 +68,10 @@ flake.nixosModules.qmilConfiguration = { config, pkgs, ... }:
     defaultEditor = true;
   };
   programs.fish.enable = true;
+  programs.direnv = {
+  enable = true;
+  nix-direnv.enable = true;
+  };
 
   nixpkgs.config.allowUnfree = true;
 
@@ -77,7 +87,9 @@ flake.nixosModules.qmilConfiguration = { config, pkgs, ... }:
     lazygit
     thunar
     cava
-  ];
+    cloudflare-warp
+    vesktop
+    ];
 
   system.stateVersion = "26.05";
 };
