@@ -61,6 +61,7 @@ flake.nixosModules.qmilConfiguration = { config, pkgs, ... }:
     enable = true;
     defaultEditor = true;
   };
+  programs.fish.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
