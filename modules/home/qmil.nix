@@ -19,6 +19,7 @@
           pkgs.gnumake
           pkgs.python3
           pkgs.wl-clipboard
+          pkgs.cliphist
         ];
 
         xdg.configFile."niri/config.kdl".source = ./niri-config.kdl;
