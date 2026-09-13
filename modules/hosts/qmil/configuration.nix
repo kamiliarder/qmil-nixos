@@ -6,6 +6,8 @@ flake.nixosModules.qmilConfiguration = { config, pkgs, ... }:
   imports = [
     self.nixosModules.qmilHardware
     self.nixosModules.niri
+    self.nixosModules.qmilHome
+    inputs.home-manager.nixosModules.home-manager
   ];
 
   # Bootloader
@@ -31,7 +33,7 @@ flake.nixosModules.qmilConfiguration = { config, pkgs, ... }:
   # };
   environment.variables = {
     XCURSOR_THEME = "Adwaita";
-    XCURSOR_SIZE = "24";
+    XCURSOR_SIZE = "16";
     };
 
   services.printing.enable = true;
