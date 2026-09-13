@@ -68,10 +68,13 @@ flake.nixosModules.qmilConfiguration = { config, pkgs, ... }:
     defaultEditor = true;
   };
   programs.fish.enable = true;
+
   programs.direnv = {
   enable = true;
   nix-direnv.enable = true;
   };
+
+  programs.nix-ld.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
@@ -89,8 +92,11 @@ flake.nixosModules.qmilConfiguration = { config, pkgs, ... }:
     cava
     cloudflare-warp
     vesktop
+
+    nerd-fonts.jetbrains-mono
     ];
 
   system.stateVersion = "26.05";
+  fonts.fontconfig.enable = true;
 };
 }
