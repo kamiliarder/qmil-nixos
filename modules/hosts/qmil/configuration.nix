@@ -52,7 +52,8 @@ flake.nixosModules.qmilConfiguration = { config, pkgs, ... }:
     isNormalUser = true;
     description = "qmil";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [ ];
+    packages = with pkgs; [];
+    shell = pkgs.fish;
   };
 
   programs.firefox.enable = true;
@@ -73,6 +74,8 @@ flake.nixosModules.qmilConfiguration = { config, pkgs, ... }:
     discord
     spotify
     lazygit
+    thunar
+    cava
   ];
 
   system.stateVersion = "26.05";
