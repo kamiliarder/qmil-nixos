@@ -2,6 +2,8 @@
 // Check the wiki for a full description of the configuration:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Introduction
 
+spawn-at-startup "noctalia-shell"
+
 config-notification {
     disable-failed
 }
