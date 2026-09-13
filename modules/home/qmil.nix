@@ -11,5 +11,6 @@
         programs.foot.enable = true;
       };
     };
+    home-manager.backupFileExtension = "backup";
   };
 }
