@@ -5,6 +5,7 @@ flake.nixosModules.qmilConfiguration = { config, pkgs, ... }:
 {
   imports = [
     self.nixosModules.qmilHardware
+    self.nixosModules.niri
   ];
 
   # Bootloader
