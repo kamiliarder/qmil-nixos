@@ -14,6 +14,18 @@ flake.nixosModules.qmilConfiguration = { config, pkgs, ... }:
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelParams = [
+        "resume=143e07c1-06b0-4e62-a1bf-a4f93eba6b62"
+        "resume_offset=35168256"
+      ];
+
+  # swap
+  swapDevices = [
+    {
+      device = "/swapfile";
+      size = 18 * 1024; # 18 GiB
+    }
+  ];
 
   # Enable flake
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
