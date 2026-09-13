@@ -11,6 +11,7 @@
         xdg.configFile."foot/foot.ini".source = ./foot.ini;
 
         programs.foot.enable = true;
+	programs.fish.enable = true;
 	programs.fish = {
 	   enable = true;
 	   shellAliases = {
