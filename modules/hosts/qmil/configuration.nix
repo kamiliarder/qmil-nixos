@@ -98,6 +98,7 @@ flake.nixosModules.qmilConfiguration = { config, pkgs, lib, ... }:
     cloudflare-warp
     vesktop
     bruno
+    nwg-displays
 
     nerd-fonts.jetbrains-mono
     ];
