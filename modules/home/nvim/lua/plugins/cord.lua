@@ -1,4 +1,4 @@
-if true then return {} end --NOTE: If you want to use this config just comment this line
+-- if true then return {} end --NOTE: If you want to use this config just comment this line
 
 ---@type LazySpec
 return {
