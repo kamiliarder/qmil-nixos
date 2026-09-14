@@ -15,7 +15,7 @@ flake.nixosModules.qmilConfiguration = { config, pkgs, ... }:
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelParams = [
-        "resume=143e07c1-06b0-4e62-a1bf-a4f93eba6b62"
+        "resume_UUID=143e07c1-06b0-4e62-a1bf-a4f93eba6b62"
         "resume_offset=35168256"
       ];
 
@@ -104,6 +104,7 @@ flake.nixosModules.qmilConfiguration = { config, pkgs, ... }:
     cava
     cloudflare-warp
     vesktop
+    bruno
 
     nerd-fonts.jetbrains-mono
     ];
