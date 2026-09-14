@@ -22,6 +22,15 @@
           pkgs.cliphist
         ];
 
+        home.pointerCursor = {
+          enable = true;
+          gtk.enable = true;
+          x11.enable = true;
+          package = pkgs.adwaita-icon-theme;
+          name = "Adwaita";
+          size = 10;
+        };
+
         xdg.configFile."niri/config.kdl".source = ./niri-config.kdl;
         xdg.configFile."foot/foot.ini".source = ./foot.ini;
 

@@ -43,10 +43,10 @@ flake.nixosModules.qmilConfiguration = { config, pkgs, ... }:
   #   layout = "us";
   #   variant = "";
   # };
-  environment.variables = {
-    XCURSOR_THEME = "Adwaita";
-    XCURSOR_SIZE = "10";
-    };
+  # environment.variables = {
+  #   XCURSOR_THEME = "Adwaita";
+  #   XCURSOR_SIZE = "10";
+  #   };
 
   services.printing.enable = true;
 
