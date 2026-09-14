@@ -28,7 +28,18 @@ flake.nixosModules.qmilHardware = { config, lib, pkgs, modulesPath, ... }:
       fsType = "ext4";
     };
 
-  swapDevices = [ ];
+  boot.kernelParams = [
+        "resume=UUID=143e07c1-06b0-4e62-a1bf-a4f93eba6b62"
+        "resume_offset=35168256"
+      ];
+
+  # swap
+  swapDevices = [
+    {
+      device = "/swapfile";
+      size = 18 * 1024; # 18 GiB
+    }
+  ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
