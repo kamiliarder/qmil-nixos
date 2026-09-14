@@ -90,15 +90,14 @@ flake.nixosModules.qmilConfiguration = { config, pkgs, lib, ... }:
     btop
     foot
     fastfetch
-    discord
     spotify
     lazygit
-    thunar
     cava
     cloudflare-warp
     vesktop
     bruno
     nwg-displays
+    obsidian
 
     nerd-fonts.jetbrains-mono
     ];
