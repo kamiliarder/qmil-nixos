@@ -20,7 +20,6 @@
           pkgs.python3
           pkgs.wl-clipboard
           pkgs.cliphist
-          pkgs.librewolf
         ];
 
         home.pointerCursor = {
@@ -47,6 +46,11 @@
             direnv hook fish | source
           '';
         };
+
+        programs.librewolf = {
+          enable = true;
+        };
+        
                   imports = [
             inputs.spicetify-nix.homeManagerModules.default
           ];
@@ -60,6 +64,8 @@
               enabledExtensions = with spicePkgs.extensions; [
                 adblock
               ];
+
+              theme = spicePkgs.themes.text;
             };
       };
     };
