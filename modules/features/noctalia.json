@@ -39,24 +39,13 @@
             "useDistroLogo": true
           },
           {
-            "colorizeIcons": false,
-            "hideMode": "hidden",
-            "id": "ActiveWindow",
-            "maxWidth": 145,
-            "scrollingMode": "hover",
-            "showIcon": true,
-            "showText": true,
-            "textColor": "none",
-            "useFixedWidth": false
-          },
-          {
-            "characterCount": 2,
+            "characterCount": 8,
             "colorizeIcons": false,
             "emptyColor": "secondary",
             "enableScrollWheel": true,
             "focusedColor": "primary",
             "followFocusedScreen": false,
-            "fontWeight": "bold",
+            "fontWeight": "regular",
             "groupedBorderOpacity": 1,
             "hideUnoccupied": false,
             "iconScale": 0.8,
@@ -64,7 +53,7 @@
             "labelMode": "index",
             "occupiedColor": "secondary",
             "pillSize": 0.6,
-            "showApplications": false,
+            "showApplications": true,
             "showApplicationsHover": false,
             "showBadge": true,
             "showLabelsOnlyWhenOccupied": true,
@@ -358,7 +347,7 @@
       "enableSessionSearch": true,
       "ignoreMouseInput": false,
       "screenshotAnnotationTool": "",
-      "overviewLayer": true,
+      "overviewLayer": false,
       "density": "default"
     },
     "controlCenter": {
@@ -715,7 +704,7 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "eDP-2": "/home/qmil/Pictures/Wallpapers/nix-wallpaper-nineish-dark-gray.svg"
+      "eDP-2": "/home/qmil/Pictures/Wallpapers/18.jpg"
     },
     "desktopWidgetsEditMode": false,
     "display": {
