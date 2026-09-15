@@ -20,6 +20,7 @@
           pkgs.python3
           pkgs.wl-clipboard
           pkgs.cliphist
+          pkgs.librewolf
         ];
 
         home.pointerCursor = {
