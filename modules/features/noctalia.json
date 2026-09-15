@@ -358,7 +358,7 @@
       "enableSessionSearch": true,
       "ignoreMouseInput": false,
       "screenshotAnnotationTool": "",
-      "overviewLayer": false,
+      "overviewLayer": true,
       "density": "default"
     },
     "controlCenter": {

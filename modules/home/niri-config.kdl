@@ -55,7 +55,7 @@ layout {
     }
 
     focus-ring {
-        width 2
+        off
     }
 
     shadow {
@@ -70,14 +70,11 @@ layout {
 
 // Noctalia (quickshell-based) draws certain panels into this layer namespace
 layer-rule {
-    match namespace="noctalia-backdrop"
+    match namespace="^noctalia-backdrop"
     place-within-backdrop true
 }
 
 overview {
-    workspace-shadow {
-        off
-    }
 }
 
 environment {
