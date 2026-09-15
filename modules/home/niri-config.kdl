@@ -14,7 +14,7 @@ config-notification {
 
 gestures {
     hot-corners {
-        off
+        top-left
     }
 }
 
@@ -70,11 +70,8 @@ layout {
 
 // Noctalia (quickshell-based) draws certain panels into this layer namespace
 layer-rule {
-    match namespace="^quickshell$"
+    match namespace="noctalia-backdrop"
     place-within-backdrop true
-    background-effect {
-        xray false
-    }
 }
 
 overview {

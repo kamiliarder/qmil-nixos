@@ -252,7 +252,7 @@
       "panelBackgroundOpacity": 0.93,
       "translucentWidgets": false,
       "panelsAttachedToBar": true,
-      "settingsPanelMode": "attached",
+      "settingsPanelMode": "window",
       "settingsPanelSideBarCardStyle": false
     },
     "location": {
@@ -289,7 +289,7 @@
     },
     "wallpaper": {
       "enabled": true,
-      "overviewEnabled": false,
+      "overviewEnabled": true,
       "directory": "/home/qmil/Pictures/Wallpapers",
       "monitorDirectories": [],
       "enableMultiMonitorDirectories": false,
@@ -318,7 +318,7 @@
       "panelPosition": "follow_bar",
       "hideWallpaperFilenames": false,
       "useOriginalImages": false,
-      "overviewBlur": 0.4,
+      "overviewBlur": 0.45,
       "overviewTint": 0.6,
       "useWallhaven": false,
       "wallhavenQuery": "",
@@ -715,7 +715,7 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "eDP-2": "/home/qmil/Pictures/Wallpapers/nix-wallpaper-binary-black_8k.png"
+      "eDP-2": "/home/qmil/Pictures/Wallpapers/nix-wallpaper-nineish-dark-gray.svg"
     },
     "desktopWidgetsEditMode": false,
     "display": {
