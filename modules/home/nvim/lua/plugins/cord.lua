@@ -10,7 +10,7 @@ return {
         icon = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWlscHVkcmN5M21yazhyczRxMGMybmlhZGhmMjdlaG9mNGhpM3ZqMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/g2YnT74o9QuezBuYjL/giphy.gif",
       },
       display = {
-        theme = "minecraft",
+        theme = "classic",
         flavor = "accent",
         layout = "editor",
         swap_icons = true,
