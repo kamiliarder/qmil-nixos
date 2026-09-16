@@ -704,7 +704,7 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "eDP-2": "/home/qmil/Pictures/Wallpapers/18.jpg"
+      "eDP-2": "/home/qmil/Pictures/Wallpapers/haikyuu.png"
     },
     "desktopWidgetsEditMode": false,
     "display": {
@@ -725,7 +725,7 @@
       }
     },
     "notificationsState": {
-      "lastSeenTs": 0
+      "lastSeenTs": 1789463754000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.7"

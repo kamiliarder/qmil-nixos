@@ -162,7 +162,7 @@ window-rule {
     draw-border-with-background false
 }
 window-rule {
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id=r#"librewolf$"# title="^Picture-in-Picture$"
     match app-id="zoom"
     open-floating true
 }
@@ -318,6 +318,6 @@ binds {
     // ===== App launchers =====
     Mod+E hotkey-overlay-title="File Manager" { spawn "nautilus"; }
     Mod+T hotkey-overlay-title="Open Terminal" { spawn "foot"; }
-    Mod+W repeat=false hotkey-overlay-title="Browser" { spawn "firefox"; }
+    Mod+W repeat=false hotkey-overlay-title="Browser" { spawn "librewolf"; }
     Mod+Shift+M hotkey-overlay-title="Manage Monitors" { spawn "nwg-displays"; }
 }
