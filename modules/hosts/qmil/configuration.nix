@@ -6,6 +6,7 @@ flake.nixosModules.qmilConfiguration = { config, pkgs, lib, ... }:
   imports = [
     self.nixosModules.qmilHardware
     self.nixosModules.niri
+    self.nixosModules.noctalia
     self.nixosModules.qmilHome
     inputs.home-manager.nixosModules.home-manager
   ];
@@ -78,6 +79,8 @@ flake.nixosModules.qmilConfiguration = { config, pkgs, lib, ... }:
   nix-direnv.enable = true;
   };
 
+  programs.firefox.enable = true;
+
   programs.nix-ld.enable = true;
 
   nixpkgs.config.allowUnfree = true;
@@ -97,7 +100,6 @@ flake.nixosModules.qmilConfiguration = { config, pkgs, lib, ... }:
     bruno
     nwg-displays
     obsidian
-    librewolf
 
     nerd-fonts.jetbrains-mono
     ];

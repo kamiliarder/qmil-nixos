@@ -10,7 +10,6 @@
           config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/modules/home/nvim";
 
         home.packages = [
-          self.packages.${pkgs.stdenv.hostPlatform.system}.myNoctalia
           pkgs.dbeaver-bin
           pkgs.ripgrep
           pkgs.fd
@@ -47,10 +46,6 @@
           '';
         };
 
-        programs.librewolf = {
-          enable = true;
-        };
-        
                   imports = [
             inputs.spicetify-nix.homeManagerModules.default
           ];
