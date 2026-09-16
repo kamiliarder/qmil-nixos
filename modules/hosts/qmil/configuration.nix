@@ -54,10 +54,10 @@ flake.nixosModules.qmilConfiguration = { config, pkgs, lib, ... }:
     enable = true;
     package = pkgs.mysql84;
   };
-  systemd.services.mysql.wantedBy = lib.mkForce [ ];
-  security.sudo.extraRules = [
-
-      ];
+  systemd.services = {
+    mysql.wantedBy = lib.mkForce [ ]; 
+    cloudflare-warp.wantedBy = lib.mkForce[];
+    };
 
   users.users."qmil" = {
     isNormalUser = true;
@@ -67,7 +67,6 @@ flake.nixosModules.qmilConfiguration = { config, pkgs, lib, ... }:
     shell = pkgs.fish;
   };
 
-  programs.firefox.enable = true;
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -98,6 +97,7 @@ flake.nixosModules.qmilConfiguration = { config, pkgs, lib, ... }:
     bruno
     nwg-displays
     obsidian
+    librewolf
 
     nerd-fonts.jetbrains-mono
     ];
