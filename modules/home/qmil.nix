@@ -19,7 +19,23 @@
           pkgs.python3
           pkgs.wl-clipboard
           pkgs.cliphist
+          pkgs.playerctl
         ];
+
+        systemd.user.services.noctalia-lyrics = {
+          Unit = {
+            Description = "Noctalia Lyrics Daemon";
+            After = [ "graphical-session.target" ];
+          };
+          Service = {
+            # This explicitly links your script to a python runtime that includes syncedlyrics
+            ExecStart = "${pkgs.python313.withPackages (ps: [ ps.syncedlyrics ])}/bin/python3 %h/.local/bin/spotify_lyrics_daemon.py";
+            Restart = "always";
+          };
+          Install = {
+            WantedBy = [ "default.target" ];
+          };
+        };
 
         home.pointerCursor = {
           enable = true;
@@ -65,5 +81,7 @@
       };
     };
     home-manager.backupFileExtension = "backup";
+
+
   };
 }
