@@ -14,9 +14,7 @@
           pkgs.ripgrep
           pkgs.fd
           pkgs.unzip
-          pkgs.gcc
-          pkgs.gnumake
-          pkgs.python3
+          pkgs.tree-sitter
           pkgs.wl-clipboard
           pkgs.cliphist
           pkgs.playerctl
