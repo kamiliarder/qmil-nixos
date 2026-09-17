@@ -51,7 +51,7 @@ layout {
     }
 
     focus-ring {
-        off
+        off   
     }
 
     shadow {
@@ -139,7 +139,6 @@ window-rule {
     match app-id=r#"^gnome-calculator$"#
     match app-id=r#"^galculator$"#
     match app-id=r#"^blueman-manager$"#
-    match app-id=r#"^org\.gnome\.Nautilus$"#
     match app-id=r#"^xdg-desktop-portal$"#
     open-floating true
 }
@@ -186,6 +185,10 @@ Mod+Space hotkey-overlay-title="Launcher: Toggle" {
 
 Mod+Comma hotkey-overlay-title="Settings" {
     spawn "noctalia" "msg" "settings-toggle";
+}
+
+Mod+V hotkey-overlay-title="Clipboard" {
+    spawn "noctalia" "msg" "panel-toggle" "clipboard";
 }
 
 Mod+S hotkey-overlay-title="Control Center" {
@@ -334,3 +337,5 @@ XF86MonBrightnessDown allow-when-locked=true {
     Mod+W repeat=false hotkey-overlay-title="Browser" { spawn "firefox"; }
     Mod+Shift+M hotkey-overlay-title="Manage Monitors" { spawn "nwg-displays"; }
 }
+
+include "/home/qmil/.config/niri/noctalia.kdl"

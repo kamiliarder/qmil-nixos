@@ -25,6 +25,9 @@ flake.nixosModules.qmilConfiguration = { config, pkgs, lib, ... }:
   time.timeZone = "Asia/Makassar";
   i18n.defaultLocale = "en_US.UTF-8";
 
+  # trusted users
+  nix.settings.trusted-users = [ "root" "qmil" ];
+
   # Desktop
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
