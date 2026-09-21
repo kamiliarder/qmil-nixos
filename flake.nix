@@ -8,13 +8,16 @@
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
     home-manager = {
-	url = "github:nix-community/home-manager";
-	inputs.nixpkgs.follows = "nixpkgs";
+	    url = "github:nix-community/home-manager";
+	    inputs.nixpkgs.follows = "nixpkgs";
     };
 
     noctalia = {
       url = "github:noctalia-dev/noctalia";
     };
+
+    evangelion-ui.url = "gitlab:lobstermane/evangelion-ui-plymouth";
+    evangelion-ui.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   nixConfig = {

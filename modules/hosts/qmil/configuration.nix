@@ -12,9 +12,38 @@ flake.nixosModules.qmilConfiguration = { config, pkgs, lib, ... }:
   ];
 
   # Bootloader
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  boot = {
+        loader = {
+          systemd-boot.enable = true;
+          efi.canTouchEfiVariables = true;
+        };
+        kernelPackages = pkgs.linuxPackages_latest;
+
+        plymouth = {
+          enable = true;
+          themePackages = [ inputs.evangelion-ui.packages.${pkgs.system}.evangelion-ui ];
+          theme = "evangelion-ui";
+        };
+
+        initrd = {
+          systemd.enable = true;
+          # kernelModules = [ "amdgpu" "nvidia" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" ];
+        };
+
+        consoleLogLevel = 3;
+
+        initrd.verbose = false;
+
+        kernelParams = [
+          "quiet"
+          "splash"
+          "rd.udev.log_level=3"
+          "rd.systemd.show_status=auto"
+        ];
+
+        loader.timeout = 5;
+      };
 
   # Enable flake
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -87,6 +116,17 @@ flake.nixosModules.qmilConfiguration = { config, pkgs, lib, ... }:
   programs.nix-ld.enable = true;
 
   nixpkgs.config.allowUnfree = true;
+
+  services.flatpak.enable = true;
+
+  systemd.services.flatpak-repo = {
+    wantedBy = [ "multi-user.target" ];
+    path = [ pkgs.flatpak ];
+    script = ''
+      flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+    '';
+  };
+
 
   environment.systemPackages = with pkgs; [
     git
