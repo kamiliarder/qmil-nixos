@@ -19,6 +19,7 @@
           pkgs.cliphist
           pkgs.playerctl
           pkgs.mpvpaper
+          pkgs.nautilus
         ];
 
         home.pointerCursor = {
@@ -46,21 +47,22 @@
           '';
         };
 
-          imports = [
-            inputs.spicetify-nix.homeManagerModules.default
-          ];
-          programs.spicetify =
-            let
-              spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
-            in
-              {
-              enable = true;
+        imports = [
+          inputs.spicetify-nix.homeManagerModules.default
+        ];
 
-              enabledExtensions = with spicePkgs.extensions; [
-                adblock
-              ];
+        programs.spicetify =
+          let
+            spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+          in
+            {
+            enable = true;
 
-              theme = spicePkgs.themes.text;
+            enabledExtensions = with spicePkgs.extensions; [
+              adblock
+            ];
+
+            theme = spicePkgs.themes.text;
             };
       };
     };

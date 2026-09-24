@@ -195,6 +195,10 @@ Mod+S hotkey-overlay-title="Control Center" {
     spawn "noctalia" "msg" "panel-toggle" "control-center";
 }
 
+Mod+X hotkey-overlay-title="Power Menu" {
+    spawn "noctalia" "msg" "panel-toggle" "session"
+}
+
 XF86AudioLowerVolume allow-when-locked=true {
     spawn "noctalia" "msg" "volume-down";
 }

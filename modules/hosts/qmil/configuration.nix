@@ -49,7 +49,17 @@ flake.nixosModules.qmilConfiguration = { config, pkgs, lib, ... }:
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   networking.hostName = "nixos";
-  networking.networkmanager.enable = true;
+  networking.enableIPv6 = false;
+  networking.networkmanager = {
+    enable = true;
+    wifi.powersave = false;
+
+    settings = {
+          connection = {
+            "ipv6.method" = "ignore";
+          };
+        };
+  };
 
   time.timeZone = "Asia/Makassar";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -59,7 +69,7 @@ flake.nixosModules.qmilConfiguration = { config, pkgs, lib, ... }:
 
   # Desktop
   services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
+  # services.desktopManager.gnome.enable = true;
   # services.xserver.xkb = {
   #   layout = "us";
   #   variant = "";
@@ -143,11 +153,20 @@ flake.nixosModules.qmilConfiguration = { config, pkgs, lib, ... }:
     bruno
     nwg-displays
     obsidian
-
-    nerd-fonts.jetbrains-mono
     ];
 
   system.stateVersion = "26.05";
-  fonts.fontconfig.enable = true;
+
+  fonts = {
+    packages = with pkgs; [
+      nerd-fonts._3270
+      nerd-fonts.iosevka
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.go-mono
+    ];
+
+    fontconfig.enable = true;
+
+      };
 };
 }
