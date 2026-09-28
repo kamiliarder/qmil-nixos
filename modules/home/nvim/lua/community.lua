@@ -12,7 +12,7 @@ return {
   { import = "astrocommunity.completion.blink-copilot" },
   { import = "astrocommunity.completion.copilot-lua" },
   { import = "astrocommunity.completion.copilot-lua-cmp" },
-  -- { import = "astrocommunity.colorscheme.vscode" },
+  { import = "astrocommunity.colorscheme.vscode-nvim" },
   { import = "astrocommunity.scrolling.cinnamon-nvim" },
   { import = "astrocommunity.utility.noice-nvim" },
   { import = "astrocommunity.motion.flash-nvim" },
