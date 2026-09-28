@@ -106,7 +106,6 @@ flake.nixosModules.qmilConfiguration = { config, pkgs, lib, ... }:
     isNormalUser = true;
     description = "qmil";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
     shell = pkgs.fish;
   };
 
