@@ -121,6 +121,7 @@ flake.nixosModules.qmilConfiguration = { config, pkgs, lib, ... }:
   nix-direnv.enable = true;
   };
 
+
   programs.firefox.enable = true;
 
   programs.nix-ld.enable = true;
@@ -128,6 +129,10 @@ flake.nixosModules.qmilConfiguration = { config, pkgs, lib, ... }:
   nixpkgs.config.allowUnfree = true;
 
   services.flatpak.enable = true;
+
+  services.tailscale = {
+        enable = true;
+      };
 
   systemd.services.flatpak-repo = {
     wantedBy = [ "multi-user.target" ];
