@@ -343,3 +343,4 @@ XF86MonBrightnessDown allow-when-locked=true {
 }
 
 include "/home/qmil/.config/niri/noctalia.kdl"
+include "/home/qmil/.config/niri/animations/animations/roll-drop.kdl"
