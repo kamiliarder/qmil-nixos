@@ -43,7 +43,22 @@ flake.nixosModules.qmilConfiguration = { config, pkgs, lib, ... }:
         ];
 
         loader.timeout = 5;
+
+        supportedFilesystems = ["ntfs"];
       };
+
+      fileSystems."/mnt/windows" = {
+        device = "/dev/disk/by-uuid/AE2435342435013F";
+        fsType = "ntfs3";
+        options = [ "nofail" "uid=1000" "rw" ];
+      };
+
+      fileSystems."/mnt/seagate" = {
+      device = "/dev/disk/by-uuid/4E21-0000";
+      fsType = "exfat";
+      options = [ "defaults" "nofail" ]; # "nofail" prevents boot failures if the drive is unplugged
+};
+
 
   # Enable flake
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -153,10 +168,10 @@ flake.nixosModules.qmilConfiguration = { config, pkgs, lib, ... }:
     lazygit
     cava
     cloudflare-warp
-    vesktop
     bruno
     nwg-displays
     obsidian
+    mpv
     ];
 
   system.stateVersion = "26.05";
