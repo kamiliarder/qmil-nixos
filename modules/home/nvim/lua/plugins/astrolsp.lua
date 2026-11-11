@@ -1,10 +1,22 @@
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+
 -- AstroLSP allows you to customize the features in AstroNvim's LSP configuration engine
 -- Configuration documentation can be found with `:h astrolsp`
 
+-- Only enable servers whose binary is actually on PATH (i.e. provided by the
+-- current direnv / nix dev-shell). Enabling every server from nvim-lspconfig
+-- makes each one that is missing spam a "Spawning language server ... failed"
+-- warning every time a matching filetype is opened.
 local function discovered_servers()
   local names = {}
   for _, f in ipairs(vim.api.nvim_get_runtime_file("lsp/*.lua", true)) do
-    table.insert(names, vim.fn.fnamemodify(f, ":t:r"))
+    local name = vim.fn.fnamemodify(f, ":t:r")
+    local ok, cfg = pcall(function() return vim.lsp.config[name] end)
+    local cmd = ok and cfg and cfg.cmd or nil
+    -- cmd can be a function (custom/RPC servers): can't inspect it, so keep it.
+    if type(cmd) == "function" or (type(cmd) == "table" and vim.fn.executable(cmd[1]) == 1) then
+      table.insert(names, name)
+    end
   end
   return names
 end
