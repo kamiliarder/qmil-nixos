@@ -20,6 +20,8 @@
           pkgs.playerctl
           pkgs.mpvpaper
           pkgs.nautilus
+          pkgs.obs-studio
+          pkgs.vesktop
         ];
 
         home.pointerCursor = {
